@@ -12,18 +12,16 @@ measure without assembling a large database of individual responses.
 So, if we had a survey on ice cream and we wanted to ask employees:
 - Do you like ice cream? (Yes/No/Prefer Not To Answer)
 - What flavors do you like? (Chocolate/Vanilla/...)
-- What toppings do you want on your sundae? (Sprinkles/Hot Fudge/..)
+- What toppings do you want on your sundae? (Sprinkles/Hot Fudge/...)
 - What is your favorite brand? (Fill in the Blank)
 
 And so on. We could classify the types of questions here among several
 distinct types to start with:
 
-- **exclusive** allow only one choice from the available options
-- **exclusive-combo** allow people to select multiple choices but
-  record the exact value if they select a single one or `combination` if
-  they pick more than one.
-- **multiple** record each choice picked by a user
-- **freefrom** accept freeform text
+- **exclusive**: Allow only one choice from the available options.
+- **exclusive-combo**: Allow people to select multiple choices but record the exact value if they select a single one or `combination` if they pick more than one.
+- **multiple**: Record each choice picked by a user.
+- **freeform**: Accept freeform text.
 
 So what? I'll admit that ice cream is a dumb example. It's something
 you could setup with an existing public service like SurveyMonkey or
@@ -64,6 +62,7 @@ prevent such analysis after the fact)
 
 - flavor:chocolate|topping:sprinkles 47
 - flavor:chocolate|topping:coconut 2
+
 and so on...
 
 Be careful: This functionality is meant for very broad intersections like
@@ -84,7 +83,7 @@ This program will have the following components:
   _can_ use this program to create a survey for people like employees or
   students, this application doesn't grant you the legal or moral right
   to do so. Please consult with the appropriate people first.
-- Confidential surveys -- or responses to specific questions within -- should
+- Confidential surveys — or responses to specific questions within — should
   never be mandatory and this program will never include cookies or
   authentication for that reason.
 - This means there are no protections against users voting more than once. **Do
@@ -92,9 +91,9 @@ This program will have the following components:
 - Whenever possible, users should be presented with an option to
   explicitly decline to answer. Users always have the option of silently
   declining by not selecting any choice, but those rejections are simply
-  not counted vs. an active decline
+  not counted vs. an active decline.
 - Intersections should be used sparingly and in such a way that a specific
-subpopulation can not be used to deanonymize survey respondents.
+subpopulation cannot be used to deanonymize survey respondents.
 
 ## Caveats About Anonymity
 
@@ -104,7 +103,7 @@ subpopulation can not be used to deanonymize survey respondents.
   not an expert in cryptography and anonymity.
 - To protect the anonymity of whether users have submitted any responses or not,
   this program explicitly does not use cookies or other means to identify specific
-  users. This means there are no protections against ballot-box stuffing
+  users. This means there are no protections against ballot-box stuffing.
 - HTTP server logs make it impossible for me to guarantee a user's
   participation on a particular survey is anonymous, unless server logs
-  are also scrubbed. I'd suggest using TOR
+  are also scrubbed. I'd suggest using [TOR](https://www.torproject.org).
