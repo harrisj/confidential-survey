@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -72,6 +72,7 @@ end
 group :test do
   gem 'timecop'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'rspec_junit_formatter'
 end
 
 group :staging, :production do
