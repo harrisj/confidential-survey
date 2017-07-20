@@ -39,10 +39,9 @@ gem 'title'
 gem 'ice_nine'
 gem 'redcarpet'
 gem 'silencer'
-gem 'reek'
-gem 'newrelic_rpm'
 
 group :production do
+  gem 'newrelic_rpm'
   gem 'rails_12factor'
   gem 'pg'
 end
@@ -55,6 +54,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'reek'
   gem 'capybara'
   gem 'awesome_print'
   gem 'bundler-audit', require: false
