@@ -63,7 +63,7 @@ jobs:
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format progress
-            cc-test-reporter after-build --exit-code $?
+            ./cc-test-reporter after-build --exit-code $?
 
       # collect reports
       - store_test_results:
