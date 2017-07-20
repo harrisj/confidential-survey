@@ -71,7 +71,7 @@ end
 
 group :test do
   gem 'timecop'
-  gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov', require: false
   gem 'rspec_junit_formatter'
 end
 
