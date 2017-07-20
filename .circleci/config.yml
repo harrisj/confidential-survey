@@ -53,17 +53,16 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # run tests!
+      # TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
       - run:
           name: run tests
           command: |
             mkdir /tmp/test-results
             ./cc-test-reporter before-build
-            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
-                            --format progress \
-                            "${TEST_FILES}"
+                            --format progress
             cc-test-reporter after-build --exit-code $?
 
       # collect reports
